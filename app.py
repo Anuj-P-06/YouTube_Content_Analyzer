@@ -10,13 +10,12 @@ from textblob import TextBlob
 import re
 import nltk
 
-# Ensure that necessary NLTK data is downloaded
 nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
 
 # Function to summarize text
-def summarize_text(text, max_length=80000):  # Increased max_length to 80,000
+def summarize_text(text, max_length=80000): 
     summarization_pipeline = pipeline("summarization")
     summary = summarization_pipeline(text, max_length=max_length, min_length=100, do_sample=False)
     return summary[0]['summary_text']
