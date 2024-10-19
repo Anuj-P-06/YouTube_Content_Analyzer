@@ -10,12 +10,13 @@ from textblob import TextBlob
 import re
 import nltk
 
+# Ensure that necessary NLTK data is downloaded
 nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
 
 # Function to summarize text
-def summarize_text(text, max_length=80000): 
+def summarize_text(text, max_length=80000):  # Increased max_length to 80,000
     summarization_pipeline = pipeline("summarization")
     summary = summarization_pipeline(text, max_length=max_length, min_length=100, do_sample=False)
     return summary[0]['summary_text']
@@ -105,7 +106,7 @@ def main():
             # Get transcript of the video
             transcript = YouTubeTranscriptApi.get_transcript(video_id)
             if not transcript:
-                st.error("Transcript not available for this video.")
+                st.error("Transcript not available for this video. Please try a different video.")
                 return
 
             video_text = ' '.join([line['text'] for line in transcript])
@@ -138,11 +139,12 @@ def main():
             st.write(f"Subjectivity: {sentiment.subjectivity}")
 
         except TranscriptsDisabled:
-            st.error("Transcripts are disabled for this video.")
+            st.error("Transcripts are disabled for this video. Please try a different video.")
         except NoTranscriptFound:
-            st.error("No transcript found for this video.")
+            st.error("No transcript found for this video. Please try a different video.")
         except Exception as e:
             st.error(f"Error: {str(e)}")
 
 if __name__ == "__main__":
     main()
+
