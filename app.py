@@ -10,10 +10,11 @@ from textblob import TextBlob
 import re
 import nltk
 
-# Ensure that necessary NLTK data is downloaded
+# Ensure necessary NLTK data is downloaded
 nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
+nltk.download('tokenizers/punkt_tab/english')  # Added to resolve punkt_tab error
 
 # Function to summarize text
 def summarize_text(text, max_length=80000):  # Increased max_length to 80,000
@@ -147,4 +148,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
