@@ -1,5 +1,4 @@
-# YouTube-Video-Summarizer
-
+# YouTube_Content_Analyzer
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Reasons for Making This Project](#reasons-for-making-this-project)
@@ -15,7 +14,7 @@ The YouTube Video Summarizer is a web application built using Streamlit that all
 - **Keyword Extraction**: To help identify the most important keywords or phrases in a video.
 - **Topic Modeling**: To uncover the key topics discussed in the video.
 - **Sentiment Analysis**: To determine the overall sentiment (positive or negative) of the video content.
-- **User Engagement**: To offer a tool that enhances the experience of consuming YouTube videos by providing summarized insights.
+- **User Engagement**: To offer a tool that enhances the experience of consuming  videos by providing summarized insights.
 
 ## Tools Used:
 - **Streamlit**: For building the interactive web application.
